@@ -1,10 +1,9 @@
 from django.db import models
 from django.conf import settings
-from syncr.flickr.models import BigIntegerField
 
 class Tweet(models.Model):
     pub_time    = models.DateTimeField()
-    twitter_id  = BigIntegerField(unique=True)
+    twitter_id  = models.BigIntegerField(unique=True)
     text        = models.TextField()
     user        = models.ForeignKey('TwitterUser')
 
